@@ -12,15 +12,19 @@ class Ability {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
+    long id
 
-    private String name;
+    String name
 
-    private int duration;
+    int duration
 
-    private String description;
+    String description
 
-    private int cooldown;
+    int cooldown
+
+    Date createdAt
+
+    Date updatedAt
 
     Ability(long id, String name, int duration, String description, int cooldown) {
         this.id = id
@@ -30,23 +34,5 @@ class Ability {
         this.cooldown = cooldown
     }
 
-    long getId() {
-        return id
-    }
-
-    String getName() {
-        return name
-    }
-
-    int getDuration() {
-        return duration
-    }
-
-    String getDescription() {
-        return description
-    }
-
-    int getCooldown() {
-        return cooldown
-    }
+    Ability() {}
 }

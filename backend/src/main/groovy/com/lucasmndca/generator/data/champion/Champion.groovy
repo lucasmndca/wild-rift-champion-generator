@@ -15,27 +15,33 @@ class Champion {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    Long id
 
-    private String name;
+    String name
 
-    private List<String> lanes;
+    String description
 
-    private List<Ability> abilities;
+    List<String> lanes
 
-    private RegionEnum region;
+    RegionEnum region
 
-    private int height;
+    int height
 
-    private int weight;
+    int weight
 
-    private String gender;
+    String gender
 
-    private String color;
+    String color
 
-    Champion(Long id, String name, List<String> lanes, List<Ability> abilities, RegionEnum region, int height, int weight, String gender, String color) {
+    Date createdAt
+
+    Date updatedAt
+
+    Champion(Long id, String name, String description, List<String> lanes, List<Ability> abilities, RegionEnum region,
+             int height, int weight, String gender, String color) {
         this.id = id
         this.name = name
+        this.description = description
         this.lanes = lanes
         this.abilities = abilities
         this.region = region
@@ -46,77 +52,5 @@ class Champion {
     }
 
     Champion() {
-    }
-
-    Long getId() {
-        return id
-    }
-
-    void setId(Long id) {
-        this.id = id
-    }
-
-    String getName() {
-        return name
-    }
-
-    void setName(String name) {
-        this.name = name
-    }
-
-    List<String> getLanes() {
-        return lanes
-    }
-
-    void setLanes(List<String> lanes) {
-        this.lanes = lanes
-    }
-
-    List<Ability> getAbilities() {
-        return abilities
-    }
-
-    void setAbilities(List<Ability> abilities) {
-        this.abilities = abilities
-    }
-
-    RegionEnum getRegion() {
-        return region
-    }
-
-    void setRegion(RegionEnum region) {
-        this.region = region
-    }
-
-    int getHeight() {
-        return height
-    }
-
-    void setHeight(int height) {
-        this.height = height
-    }
-
-    int getWeight() {
-        return weight
-    }
-
-    void setWeight(int weight) {
-        this.weight = weight
-    }
-
-    String getGender() {
-        return gender
-    }
-
-    void setGender(String gender) {
-        this.gender = gender
-    }
-
-    String getColor() {
-        return color
-    }
-
-    void setColor(String color) {
-        this.color = color
     }
 }
