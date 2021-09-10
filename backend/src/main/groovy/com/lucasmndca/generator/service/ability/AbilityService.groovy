@@ -1,33 +1,39 @@
 package com.lucasmndca.generator.service.ability
 
+import com.lucasmndca.generator.data.ability.Ability
+import com.lucasmndca.generator.repository.ability.AbilityRepository
 import com.lucasmndca.generator.service.AbstractService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class AbilityService extends AbstractService {
+class AbilityService extends AbstractService<Ability> {
+
+    @Autowired
+    AbilityRepository repository
 
     @Override
-    Object createEntity(Object Entity) {
-        return null
+    Ability createEntity(Ability entity) {
+        return repository.save(entity)
     }
 
     @Override
-    Object updateEntity(Object Entity) {
-        return null
+    Ability updateEntity(Ability entity) {
+        return repository.save(entity)
     }
 
     @Override
-    Boolean deleteEntity(Object Entity) {
-        return null
+    Boolean deleteEntity(Ability entity) {
+        return repository.delete(entity)
     }
 
     @Override
-    Object getEntity(Long id) {
-        return null
+    Ability getEntity(Long id) {
+        return repository.findById(id)
     }
 
     @Override
     List getAll() {
-        return null
+        return repository.findAll()
     }
 }
