@@ -8,10 +8,11 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface ChampionAbilityRepository extends CrudRepository<ChampionAbility, Long>{
-    //TODO: implement queries
-    @Query(value = "")
+
+    @Query("insert into champion_v_ability (id_champion, id_ability) values (:abilityId, :championId)")
     Boolean assignAbility(@Param Long abilityId, @Param Long championId)
 
-    @Query(value = "")
+    @Query("delete from champion_v_ability where id_champion = :championId and id_ability = :abilityId")
     Boolean unassignAbility(@Param Long abilityId, @Param Long championId)
+
 }
