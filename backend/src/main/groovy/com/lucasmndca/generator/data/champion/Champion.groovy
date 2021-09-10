@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.persistence.Table
+import javax.persistence.Transient
 
 @Entity
 @Table(name="champion")
@@ -21,6 +22,7 @@ class Champion {
 
     String description
 
+    @Transient
     List<String> lanes
 
     RegionEnum region
