@@ -41,10 +41,18 @@ class ChampionAbilityController {
         }
     }
 
-    //TODO: implement get for a single champion
-
     @GetMapping("championAbility")
     Ability getAll() {
+        try {
+            return service.getAll()
+        } catch(Exception e) {
+            logger.severe("Error on getting all abilities.")
+            throw e
+        }
+    }
+
+    @GetMapping("championAbility/{id}")
+    Ability getChampionAbility() {
         try {
             return service.getAll()
         } catch(Exception e) {

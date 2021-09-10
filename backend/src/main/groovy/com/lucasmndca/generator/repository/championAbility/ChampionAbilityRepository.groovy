@@ -14,5 +14,4 @@ interface ChampionAbilityRepository extends CrudRepository<ChampionAbility, Long
 
     @Query(value = "")
     Boolean unassignAbility(@Param Long abilityId, @Param Long championId)
-
 }

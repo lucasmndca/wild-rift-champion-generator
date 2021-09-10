@@ -5,11 +5,11 @@ import org.springframework.stereotype.Component
 @Component
 abstract class AbstractService<T> {
 
-    abstract T createEntity(T Entity)
+    abstract T createEntity(T entity)
 
-    abstract T updateEntity(T Entity)
+    abstract T updateEntity(T entity)
 
-    abstract Boolean deleteEntity(T Entity)
+    abstract Boolean deleteEntity(T entity)
 
     abstract T getEntity(Long id)
 
